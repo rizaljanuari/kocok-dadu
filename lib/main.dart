@@ -4,7 +4,7 @@ void main() {
   return runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.redAccent,
         appBar: AppBar(
           title: Text('Dicee'),
           backgroundColor: Colors.red,
@@ -18,6 +18,27 @@ void main() {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    int leftDiceNumber = 2;
+
+    return Center(
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: FlatButton(
+              child: Image.asset('images/dice$leftDiceNumber.png'),
+              onPressed: () {
+                leftDiceNumber++;
+              },
+            ),
+          ),
+          Expanded(
+            child: FlatButton(
+              child: Image.asset('images/dice2.png'),
+              onPressed: () {},
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
